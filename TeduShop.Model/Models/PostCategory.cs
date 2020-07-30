@@ -22,5 +22,6 @@ namespace TeduShop.Model.Models
         public int DisplayOrder { set; get; }
         public string Image { set; get; }
         public bool HomeFlag { set; get; }
+
     }
 }
