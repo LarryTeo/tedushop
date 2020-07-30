@@ -13,8 +13,10 @@ namespace TeduShop.Model.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
         [Required]
+        [MaxLength(50)]
         public string Name { set; get; }
         [Required]
+        [MaxLength(256)]
         public string URL { set; get; }
         public int? DisplayOrder { set; get; }
 
@@ -22,9 +24,10 @@ namespace TeduShop.Model.Models
         public int GroupId { set; get; }
         // bắt đầu tạo thuộc tính cho khóa ngoại
         [ForeignKey("GroupID")]
-        public virtual MenuGroup MenuGroup { set; get; }
+        public virtual MenuGroup MenuGroup { set; get; }// thuộc tính virtual liên kết đến bảng cha
+        [MaxLength(10)]
         public string Target { set; get; }
-        [Required]
+        
         public bool Status { set; get; }
 
     }

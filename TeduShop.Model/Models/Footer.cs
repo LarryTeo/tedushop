@@ -10,7 +10,8 @@ namespace TeduShop.Model.Models
     public class Footer
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [MaxLength(50)]//nho de do dai cho phep
         public string ID { set; get; }
 
        [Required]

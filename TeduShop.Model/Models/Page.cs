@@ -12,11 +12,14 @@ namespace TeduShop.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
-        public string Name { set; get; }
-        public string content { set; get; }
-        public string MetaKeyword { set; get; }
-        public string MetaDescription { set; get; }
         [Required]
-        public bool Status { set; get; }
+        [MaxLength(256)]
+        public string Name { set; get; }
+        [Column(TypeName ="varchar")]
+        [MaxLength(256)]
+        [Required]
+        public string Alias { set; get; }
+
+        public string Content { set; get; }
     }
 }

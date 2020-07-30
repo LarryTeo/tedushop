@@ -13,9 +13,19 @@ namespace TeduShop.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
+        [Required]
+        [MaxLength(256)]
+        [Column(TypeName ="varchar")]
+        public string Name { set; get; }
+        [Required]
+        [MaxLength(256)]
+        [Column(TypeName = "varchar")]
         public string Alias { set; get; }
-        public int? CategoryID { set; get; }
+        [Required]
+        public string CategoryID { set; get; }
+        [MaxLength(265)]
         public string Image { set; get; }
+        [MaxLength(500)]
         public string Description { set; get; }
         public string Content { set; get; }
         public bool? HomeFlag { set; get; }
@@ -23,7 +33,6 @@ namespace TeduShop.Model.Models
         public int? ViewCount { set; get; }
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { set; get; }
-        [ForeignKey("Post")]
-        public virtual ProductCategory ProductCategory { set; get; }
+
     }
 }

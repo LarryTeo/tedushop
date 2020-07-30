@@ -10,6 +10,7 @@ namespace TeduShop.Model.Models
     public class OrderDetail
     {
         [Key]
+
         public int OrderID { set; get; }
         [Key]
         public int ProductID { set; get; }
